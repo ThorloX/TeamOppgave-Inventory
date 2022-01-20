@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laeibah</title>
+    <style>
+        body{
+            display:block;
+            background: url(https://c4.wallpaperflare.com/wallpaper/707/842/535/simple-humor-rick-astley-lyrics-wallpaper-preview.jpg) no-repeat center center fixed;
+            background-size: cover;
+            margin: 10vh;
+
+
+           
+        
+        }
+        img{
+            display: flex;
+            height: 180px;
+            width: 180px;
+            border: solid 5px black;
+        }
+
+        #output{
+            height: 180px;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 190px ;
+            position:absolute;
+            right:30px;
+            top:10vh;
+            column-gap: 0px;
+            align-items:right;
+        }
+    </style>
+</head>
+<body>
+
+
+<div id=en  onclick="add(this)"><img src="https://c.tenor.com/CPKRTsSr14kAAAAd/rick-astley.gif" alt="Rickyboy"></div>
+<div id=to  onclick="add(this)"><img src='https://c.tenor.com/Ei4_yBPMhu0AAAAd/i-was-joking-rickroll.gif'alt="RickAstleyMeme" ></div>
+<div id=tre onclick="add(this)"><img src='https://i.ibb.co/tq0tTfL/Untitled.png' alt="RickAstleyHeart"></div>
+
+<button id='show' onclick="showOutput()";>Whats in the Box?</button>
+<br/>
+<p id='output'style="display:none;"></p>
+<br/>
+<button onclick="reset()">Reset Inventory</button>
+
+
+
+
+<script>
+
+     var knapp = document.getElementById('show')
+     var utputt = document.getElementById('output')
+     var one = document.getElementById('en')
+     var two = document.getElementById('to')
+     var three = document.getElementById('tre')
+    
+
+// Denne sjekker om output div vises og bytter mellom synlig og usynlig // 
+function showOutput(){
+    
+    let skjult = utputt.style.display; 
+    
+    if (skjult == 'none') {
+        utputt.style.display = 'grid';
+        knapp.innerHTML = 'Hide tha box!';
+    }
+    else {
+        utputt.style.display = 'none';
+        knapp.innerHTML = 'Whats in the Box?';
+     
+    }
+   
+}
+
+// Denne legger til en kopi av elementet vi trykker på til det som allerede ligger i output //
+function add(lagret){
+    utputt.innerHTML += lagret.innerHTML;
+    code()
+}
+function reset(){
+    utputt.innerHTML = '';
+    utputt.style.display = 'none';
+    knapp.innerHTML = 'Whats in the Box?';
+}
+function code(){
+    if (utputt.innerHTML == one.innerHTML + two.innerHTML + one.innerHTML + two.innerHTML + three.innerHTML + two.innerHTML  + one.innerHTML + two.innerHTML + one.innerHTML){
+        utputt.innerHTML = window.location.assign('https://www.youtube.com/watch?v=DLzxrzFCyOs');
+    }
+    else 
+        return;
+}
+
+</script>
+
+</body>
+</html>
